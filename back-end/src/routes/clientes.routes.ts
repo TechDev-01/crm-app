@@ -9,7 +9,7 @@ import { protect } from "../middlewares/auth.middleware";
 
 const router = Router();
 
-router.get("/home", protect, getClients);
+router.get("/", protect, getClients);
 
 router.get("/get/:id", protect, getClientById);
 

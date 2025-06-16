@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
 const tareasSchema = new Schema({
   nombre: {
@@ -28,7 +29,7 @@ const tareasSchema = new Schema({
     required: true,
   },
   usuario: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario",
     required: true,
   }

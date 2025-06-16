@@ -4,7 +4,9 @@ import { actualizarCampos } from "../utils/validarCampos";
 
 export const getTask = async (req: Request, res: Response) => {
   try {
-    const tareas = await Tareas.find();
+    const tareas = await Tareas.find().populate("usuario", "username");
+
+    console.log(tareas);
     if (!tareas) {
       res.status(404).json({ message: "No se encontraron las tareas" });
       return;
@@ -15,13 +17,25 @@ export const getTask = async (req: Request, res: Response) => {
   }
 };
 
+export const getTaskById = async (req: Request, res: Response) => {
+  try {
+    const tarea = await Tareas.findById(req.params.id);
+    if (!tarea) {
+      res.status(404).json({ message: "Tarea no encontrada" });
+      return;
+    }
+    res.status(200).json(tarea);
+  } catch (error) {
+    res.status(500).json({ message: "Error obteniendo la tarea" });
+  }
+};
+
 export const createTask = async (req: Request, res: Response) => {
   try {
-    const { nombre, fecha, atencion, estado, fechaLimite, usuario } = req.body;
+    const { nombre, atencion, estado, fechaLimite, usuario } = req.body;
 
     const newTask = new Tareas({
       nombre,
-      fecha,
       atencion,
       estado,
       fechaLimite,

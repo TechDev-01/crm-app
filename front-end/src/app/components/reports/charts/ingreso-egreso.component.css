@@ -1,0 +1,9 @@
+::ng-deep .legend-labels {
+  width: auto !important;
+  max-width: none !important;
+}
+
+::ng-deep .legend-label-text {
+  width: auto !important;
+  white-space: nowrap !important;
+}

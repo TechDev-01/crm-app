@@ -1,10 +1,20 @@
 import Usuario from "../models/Usuario";
 import { Request, Response } from "express";
 import { generateToken } from "../utils/generateToken";
-import cookieParser from "cookie-parser";
 import bcrypt from "bcrypt";
 
-export const registerUser = async (req: Request, res: Response) => {
+/**
+ * 
+ * @param req interfaz Request que representa la peticion HTTP
+ * @param res interfaz Response que representa la respuesta HTTP
+ * @returns {void} Retorna un mensaje de exito o error al registrar un usuario
+ * @description Esta funcion se encarga de registrar un nuevo usuario en la base de datos.
+ * Verifica que los campos requeridos esten presentes y que el usuario no sea existente.
+ * En caso de que el usuario no exista, se procede a hashear la contraseña y guardar el nuevo usuario.
+ * Si el registro es exitoso, se retorna un mensaje de exito.
+ */
+
+export const registerUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, email, password } = req.body;
 
@@ -38,7 +48,18 @@ export const registerUser = async (req: Request, res: Response) => {
   }
 };
 
-export const loginUser = async (req: Request, res: Response) => {
+/**
+ * @param req interfaz Request que representa la peticion HTTP
+ * @param res interfaz Response que representa la respuesta HTTP
+ * @returns {void} Retorna una cookie con el token de acceso y un mensaje de exito o error al inciar sesion
+ * @description Esta funcion se encarga de iniciar sesion de un usuario existente.
+ * Verifica que los campos requeridos esten presentes y que el usuario exista.
+ * Si el usuario existe, se compara la contraseña proporcionada con la almacenada en la base de datos.
+ * Si la contraseña coincide, se genera un token de acceso y se retorna una cookie con el token.
+ * Si el usuario no existe o la contraseña no coincide, se retorna un mensaje de error.
+ */
+
+export const loginUser = async (req: Request, res: Response): Promise<void> => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -68,7 +89,7 @@ export const loginUser = async (req: Request, res: Response) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
     })
-    .send("login exitoso");
+    .json({ message: "login exitoso" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });

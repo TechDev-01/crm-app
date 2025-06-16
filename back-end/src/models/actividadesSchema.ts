@@ -1,27 +1,30 @@
 import { Schema, model, Types } from "mongoose";
 
-const actividadSchema = new Schema ({
+const actividadSchema = new Schema(
+  {
     tipo: {
-        type: String,
-        enum: ["llamada", "reunion", "correo"],
-        required: true
+      type: String,
+      enum: ["llamada", "reunion", "correo"],
+      required: true,
     },
     descripcion: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     fecha: {
-        type: Date,
-        default: Date.now
+      type: Date,
+      default: Date.now,
     },
     cliente: {
-        type: Types.ObjectId,
-        ref: "Cliente",
-        required: true
+      type: Types.ObjectId,
+      ref: "Cliente",
+      required: true,
     },
-}, {
+  },
+  {
     timestamps: true,
-});
+  }
+);
 
 const Actividad = model("Actividad", actividadSchema);
 export default Actividad;

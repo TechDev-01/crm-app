@@ -1,0 +1,14 @@
+<div class="grid place-items-center gap-6">
+  <app-month-picker (monthSelected)="handleMonthChange($event)"></app-month-picker>
+  <div class="w-full flex justify-center">
+    <ngx-charts-pie-chart
+      [results]="chartData"
+      [view]="[500, 300]"
+      [legend]="true"
+      [legendPosition]="legendPosition"
+      [labels]="true"
+      [doughnut]="false"
+    >
+    </ngx-charts-pie-chart>
+  </div>
+</div>

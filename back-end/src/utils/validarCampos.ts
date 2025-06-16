@@ -21,7 +21,7 @@ export const validarCampos = (campos: string[]) => {
 };
 
 /**
- * La interfaz TareaBody contiene los valores que vienen en el cuerpo de la petición
+ * @description interfaz TareaBody contiene los valores que vienen en el cuerpo de la petición
  * para validar que cada uno de ellos sea valido
  */
 
@@ -33,7 +33,7 @@ interface TareaBody {
 }
 
 /**
- * Middleware para validar los campos a actualizar en la peticion
+ * @description Middleware para validar los campos a actualizar en la peticion
  *
  * @param campos Arreglo de strings que representa los campos que se van a actualizar
  * @param body Objeto que se recibe en la peticion `req.body` y que contiene los datos
