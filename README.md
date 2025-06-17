@@ -24,8 +24,8 @@ Una aplicación web para registrar, visualizar y administrar clientes, con modul
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tuusuario/control-gastos.git
-cd control-gastos
+git clone https://github.com/TechDev-01/crm-app.git
+cd crm-app
 ```
 ## Instalar dependencias
 
