@@ -27,36 +27,36 @@ Una aplicación web para registrar, visualizar y administrar clientes, con modul
 git clone https://github.com/tuusuario/control-gastos.git
 cd control-gastos
 ```
-### Instalar dependencias
+## Instalar dependencias
 
-## Front-end
+### Front-end
 ```bash
 cd front-end
 npm install
 ```
 
-## Back-end
+### Back-end
 ```bash
 cd back-end
 npm install
 ```
 
-### Variables de entorno
+## Variables de entorno
 Crea un archivo `.env` en `/back-end` con las variables necesarias.
 ```
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/crm-app
 ```
 
-### Levantar servidores 
+## Levantar servidores 
 
-## Back-end
+### Back-end
 ```bash
 cd back-end
 npm run dev
 ```
 
-## Front-end 
+### Front-end 
 ```bash
 cd front-end
 npm start
