@@ -2,7 +2,7 @@
 
 Una aplicación web para registrar, visualizar y administrar clientes, con modulos de CRM, control financiero y sistema de autenticación basado en roles. Esta versión es una reescritura completa del front-end en Angular (anteriormente usando Vue).
 
-> 🚧 Proyecto en desarrollo – funcionalidades sujetas a cambios.
+> Proyecto en desarrollo – funcionalidades sujetas a cambios.
 
 ---
 
