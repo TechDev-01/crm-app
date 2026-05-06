@@ -2,11 +2,9 @@
 
 Una aplicación web para registrar, visualizar y administrar clientes, con modulos de CRM, control financiero y sistema de autenticación basado en roles. Esta versión es una reescritura completa del front-end en Angular (anteriormente usando Vue).
 
-> Proyecto en desarrollo – funcionalidades sujetas a cambios.
-
 ---
 
-## 🛠 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 ### Frontend
 - [Angular](https://angular.io/)
@@ -19,7 +17,7 @@ Una aplicación web para registrar, visualizar y administrar clientes, con modul
 
 ---
 
-## 🚀 Instalación y ejecución local
+## Instalación y ejecución local
 
 ### 1. Clonar el repositorio
 
